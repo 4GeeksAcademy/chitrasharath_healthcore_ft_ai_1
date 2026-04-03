@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HealthCore | Patient Enquiry Form</title>
+    <meta
+      name="description"
+      content="Submit a patient enquiry to HealthCore so our front desk team can contact you and confirm appointment details."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="HealthCore Digital" />
+    <link rel="canonical" href="/apps/healthcore_web_portal/application.html" />
+    <link rel="alternate" hreflang="en" href="/apps/healthcore_web_portal/application.html?lang=en" />
+    <link rel="alternate" hreflang="es" href="/apps/healthcore_web_portal/application.html?lang=es" />
+    <link rel="alternate" hreflang="x-default" href="/apps/healthcore_web_portal/application.html?lang=en" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="HealthCore | Patient Enquiry Form" />
+    <meta property="og:description" content="Securely submit a patient enquiry and get a callback within 1 business day." />
+    <meta property="og:url" content="/apps/healthcore_web_portal/application.html" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-sky-700 focus:px-4 focus:py-2 focus:text-white"
+      data-i18n="skip"
+      >Skip to main content</a
+    >
+
+    <header class="sticky top-0 z-40 border-b border-slate-200 bg-white/95 backdrop-blur" role="banner">
+      <div class="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+        <a href="index.html#home" class="inline-flex items-center gap-2 text-2xl font-bold tracking-tight text-sky-800" aria-label="HealthCore Home">
+          <svg class="h-8 w-8" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <rect x="2" y="2" width="44" height="44" rx="12" fill="#0C4A6E" />
+            <path d="M24 12V36M12 24H36" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" />
+            <circle cx="24" cy="24" r="18" stroke="#67E8F9" stroke-width="2" />
+          </svg>
+          <span>HealthCore</span>
+        </a>
+
+        <nav aria-label="Primary" class="order-3 w-full md:order-2 md:w-auto">
+          <ul class="flex flex-wrap items-center gap-2 text-sm font-semibold sm:gap-3 md:text-base">
+            <li>
+              <a href="index.html#home" class="rounded-md px-3 py-2 text-slate-700 transition hover:bg-sky-50 hover:text-sky-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700" data-i18n="navHome">Home</a>
+            </li>
+            <li>
+              <a href="index.html#services" class="rounded-md px-3 py-2 text-slate-700 transition hover:bg-sky-50 hover:text-sky-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700" data-i18n="navServices">Services</a>
+            </li>
+            <li>
+              <a href="index.html#locations" class="rounded-md px-3 py-2 text-slate-700 transition hover:bg-sky-50 hover:text-sky-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700" data-i18n="navLocations">Locations</a>
+            </li>
+            <li>
+              <a href="index.html#contact" class="rounded-md px-3 py-2 text-slate-700 transition hover:bg-sky-50 hover:text-sky-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700" data-i18n="navContact">Contact</a>
+            </li>
+            <li>
+              <a href="application.html" class="rounded-md bg-sky-700 px-3 py-2 text-white transition hover:bg-sky-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700" data-i18n="navApply">Request an appointment</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="order-2 flex items-center gap-2 md:order-3" aria-label="Language toggle">
+          <button type="button" data-lang-btn="en" class="rounded-md border border-slate-300 px-3 py-1.5 text-sm font-semibold text-slate-700 transition hover:border-sky-700 hover:text-sky-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700" aria-pressed="true">
+            EN
+          </button>
+          <button type="button" data-lang-btn="es" class="rounded-md border border-slate-300 px-3 py-1.5 text-sm font-semibold text-slate-700 transition hover:border-sky-700 hover:text-sky-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700" aria-pressed="false">
+            ES
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8" role="main">
+      <section class="grid gap-8 rounded-2xl bg-gradient-to-r from-sky-900 to-teal-700 px-6 py-10 text-white shadow-xl lg:grid-cols-2 lg:items-center lg:px-10">
+        <div>
+          <h1 class="text-3xl font-extrabold tracking-tight sm:text-4xl" data-i18n="formTitle">Patient Enquiry Form</h1>
+          <p class="mt-4 text-base leading-7 text-sky-100" data-i18n="formIntro">
+            Complete this form and our front desk will contact you within 1 business day to confirm your appointment details.
+          </p>
+          <p class="mt-4 rounded-md border border-sky-200 bg-white px-4 py-3 text-sm font-semibold text-sky-900 shadow-sm" data-i18n="partnerNote">
+            Are you a healthcare provider or organisation looking to partner with HealthCore? Contact our operations team at partnerships@healthcore.com
+          </p>
+        </div>
+        <figure>
+          <img
+            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80"
+            alt="A healthcare specialist using a tablet while discussing care options"
+            class="h-72 w-full rounded-xl object-cover shadow-lg sm:h-80"
+            loading="eager"
+            fetchpriority="high"
+            width="1200"
+            height="800"
+          />
+        </figure>
+      </section>
+
+      <section class="mt-6 rounded-xl border border-slate-200 bg-slate-100 p-4" aria-label="Content quality and sources">
+        <p class="text-sm font-semibold text-slate-800" data-i18n="seoByline">Prepared by HealthCore Digital. Reviewed by Priya Nair, Head of Patient Experience.</p>
+        <p class="mt-1 text-sm text-slate-700" data-i18n="seoSources">Source basis: HealthCore company briefing and milestone context (internal, 2026).</p>
+      </section>
+
+      <section class="mt-10 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+
+        <div id="eveningWarning" class="mb-4 hidden rounded-md border border-amber-300 bg-amber-50 px-4 py-3 text-amber-900" role="status" aria-live="polite"></div>
+
+        <form id="patientEnquiryForm" novalidate class="space-y-8" aria-describedby="formGuidance">
+          <p id="formGuidance" class="text-sm text-slate-600" data-i18n="requiredHint">Fields marked with * are required.</p>
+
+          <fieldset class="space-y-4 rounded-xl border border-slate-200 p-4 sm:p-5">
+            <legend class="px-2 text-lg font-semibold text-slate-900" data-i18n="personalLegend">Personal information</legend>
+            <div class="grid gap-4 md:grid-cols-2">
+              <div>
+                <label for="first_name" class="block text-sm font-semibold text-slate-800" data-i18n="firstNameLabel">First name *</label>
+                <input id="first_name" name="first_name" type="text" required minlength="2" maxlength="50" autocomplete="given-name" class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:border-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-200" aria-describedby="first_name_error" />
+                <p id="first_name_error" class="mt-1 hidden text-sm font-medium text-red-700" role="alert" aria-live="polite"></p>
+              </div>
+
+              <div>
+                <label for="last_name" class="block text-sm font-semibold text-slate-800" data-i18n="lastNameLabel">Last name *</label>
+                <input id="last_name" name="last_name" type="text" required minlength="2" maxlength="50" autocomplete="family-name" class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:border-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-200" aria-describedby="last_name_error" />
+                <p id="last_name_error" class="mt-1 hidden text-sm font-medium text-red-700" role="alert" aria-live="polite"></p>
+              </div>
+
+              <div>
+                <label for="date_of_birth" class="block text-sm font-semibold text-slate-800" data-i18n="dobLabel">Date of birth *</label>
+                <input id="date_of_birth" name="date_of_birth" type="date" required class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:border-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-200" aria-describedby="date_of_birth_error" />
+                <p id="date_of_birth_error" class="mt-1 hidden text-sm font-medium text-red-700" role="alert" aria-live="polite"></p>
+              </div>
+
+              <div>
+                <label for="email" class="block text-sm font-semibold text-slate-800" data-i18n="emailLabel">Email address *</label>
+                <input id="email" name="email" type="email" required autocomplete="email" class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:border-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-200" aria-describedby="email_error" />
+                <p id="email_error" class="mt-1 hidden text-sm font-medium text-red-700" role="alert" aria-live="polite"></p>
+              </div>
+
+              <div class="md:col-span-2">
+                <label for="phone" class="block text-sm font-semibold text-slate-800" data-i18n="phoneLabel">Phone number *</label>
+                <input id="phone" name="phone" type="tel" required placeholder="+1 305 555 0191" autocomplete="tel" class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:border-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-200" aria-describedby="phone_error" />
+                <p id="phone_error" class="mt-1 hidden text-sm font-medium text-red-700" role="alert" aria-live="polite"></p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="space-y-4 rounded-xl border border-slate-200 p-4 sm:p-5">
+            <legend class="px-2 text-lg font-semibold text-slate-900" data-i18n="visitLegend">Visit preferences</legend>
+            <div class="grid gap-4 md:grid-cols-2">
+              <div>
+                <label for="preferred_language" class="block text-sm font-semibold text-slate-800" data-i18n="preferredLanguageLabel">Preferred language *</label>
+                <select id="preferred_language" name="preferred_language" required class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:border-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-200" aria-describedby="preferred_language_error">
+                  <option value="" data-i18n="selectOption">Select an option</option>
+                  <option value="English" data-i18n="langEnglish">English</option>
+                  <option value="Spanish" data-i18n="langSpanish">Spanish</option>
+                </select>
+                <p id="preferred_language_error" class="mt-1 hidden text-sm font-medium text-red-700" role="alert" aria-live="polite"></p>
+              </div>
+
+              <div>
+                <label for="preferred_clinic" class="block text-sm font-semibold text-slate-800" data-i18n="preferredClinicLabel">Preferred clinic *</label>
+                <select id="preferred_clinic" name="preferred_clinic" required class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:border-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-200" aria-describedby="preferred_clinic_error">
+                  <option value="" data-i18n="selectOption">Select an option</option>
+                  <option value="HealthCore Austin Central">HealthCore Austin Central</option>
+                  <option value="HealthCore Austin North">HealthCore Austin North</option>
+                  <option value="HealthCore San Antonio">HealthCore San Antonio</option>
+                  <option value="HealthCore Miami">HealthCore Miami</option>
+                  <option value="HealthCore Orlando">HealthCore Orlando</option>
+                  <option value="HealthCore Atlanta">HealthCore Atlanta</option>
+                </select>
+                <p id="preferred_clinic_error" class="mt-1 hidden text-sm font-medium text-red-700" role="alert" aria-live="polite"></p>
+              </div>
+
+              <div>
+                <label for="preferred_date" class="block text-sm font-semibold text-slate-800" data-i18n="preferredDateLabel">Preferred date *</label>
+                <input id="preferred_date" name="preferred_date" type="date" required class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:border-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-200" aria-describedby="preferred_date_error" />
+                <p id="preferred_date_error" class="mt-1 hidden text-sm font-medium text-red-700" role="alert" aria-live="polite"></p>
+              </div>
+
+              <div>
+                <label for="preferred_time" class="block text-sm font-semibold text-slate-800" data-i18n="preferredTimeLabel">Preferred time of day *</label>
+                <select id="preferred_time" name="preferred_time" required class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:border-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-200" aria-describedby="preferred_time_error">
+                  <option value="" data-i18n="selectOption">Select an option</option>
+                  <option value="Morning (7am-12pm)" data-i18n="timeMorning">Morning (7am-12pm)</option>
+                  <option value="Afternoon (12pm-5pm)" data-i18n="timeAfternoon">Afternoon (12pm-5pm)</option>
+                  <option value="Evening (5pm-8pm)" data-i18n="timeEvening">Evening (5pm-8pm)</option>
+                </select>
+                <p id="preferred_time_error" class="mt-1 hidden text-sm font-medium text-red-700" role="alert" aria-live="polite"></p>
+              </div>
+
+              <div class="md:col-span-2">
+                <label for="service_type" class="block text-sm font-semibold text-slate-800" data-i18n="serviceTypeLabel">Service needed *</label>
+                <select id="service_type" name="service_type" required class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:border-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-200" aria-describedby="service_type_error">
+                  <option value="" data-i18n="selectOption">Select an option</option>
+                  <option value="Primary Care" data-i18n="servicePrimary">Primary Care</option>
+                  <option value="Chronic Disease Management" data-i18n="serviceChronic">Chronic Disease Management</option>
+                  <option value="Specialist Consultation" data-i18n="serviceSpecialist">Specialist Consultation</option>
+                  <option value="Preventive Health" data-i18n="servicePreventive">Preventive Health</option>
+                  <option value="Women's Health" data-i18n="serviceWomens">Women's Health</option>
+                  <option value="Paediatric Care" data-i18n="servicePaediatric">Paediatric Care</option>
+                  <option value="Mental Health" data-i18n="serviceMental">Mental Health</option>
+                </select>
+                <p id="service_type_error" class="mt-1 hidden text-sm font-medium text-red-700" role="alert" aria-live="polite"></p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="space-y-4 rounded-xl border border-slate-200 p-4 sm:p-5">
+            <legend class="px-2 text-lg font-semibold text-slate-900" data-i18n="coverageLegend">Visit and coverage details</legend>
+
+            <div>
+              <p class="text-sm font-semibold text-slate-800" data-i18n="newPatientQuestion">Is this your first visit to HealthCore? *</p>
+              <div class="mt-2 flex flex-wrap gap-4">
+                <label class="inline-flex items-center gap-2 text-sm text-slate-700"><input type="radio" name="new_patient" value="Yes" required class="h-4 w-4" /> <span data-i18n="yes">Yes</span></label>
+                <label class="inline-flex items-center gap-2 text-sm text-slate-700"><input type="radio" name="new_patient" value="No" class="h-4 w-4" /> <span data-i18n="no">No</span></label>
+              </div>
+              <p id="new_patient_error" class="mt-1 hidden text-sm font-medium text-red-700" role="alert" aria-live="polite"></p>
+            </div>
+
+            <div id="patientIdWrapper" class="hidden">
+              <label for="patient_id" class="block text-sm font-semibold text-slate-800" data-i18n="patientIdLabel">Patient ID (optional)</label>
+              <input id="patient_id" name="patient_id" type="text" placeholder="HC-A3F291" class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:border-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-200" aria-describedby="patient_id_error" />
+              <p id="patient_id_error" class="mt-1 hidden text-sm font-medium text-red-700" role="alert" aria-live="polite"></p>
+            </div>
+
+            <div>
+              <p class="text-sm font-semibold text-slate-800" data-i18n="insuranceQuestion">Do you have health insurance? *</p>
+              <div class="mt-2 flex flex-wrap gap-4">
+                <label class="inline-flex items-center gap-2 text-sm text-slate-700"><input type="radio" name="has_insurance" value="Yes" required class="h-4 w-4" /> <span data-i18n="yes">Yes</span></label>
+                <label class="inline-flex items-center gap-2 text-sm text-slate-700"><input type="radio" name="has_insurance" value="No" class="h-4 w-4" /> <span data-i18n="no">No</span></label>
+              </div>
+              <p id="has_insurance_error" class="mt-1 hidden text-sm font-medium text-red-700" role="alert" aria-live="polite"></p>
+            </div>
+
+            <div id="insuranceFields" class="hidden grid gap-4 md:grid-cols-2">
+              <div>
+                <label for="insurance_provider" class="block text-sm font-semibold text-slate-800" data-i18n="insuranceProviderLabel">Insurance provider *</label>
+                <input id="insurance_provider" name="insurance_provider" type="text" maxlength="100" class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:border-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-200" aria-describedby="insurance_provider_error" />
+                <p id="insurance_provider_error" class="mt-1 hidden text-sm font-medium text-red-700" role="alert" aria-live="polite"></p>
+              </div>
+              <div>
+                <label for="insurance_member_id" class="block text-sm font-semibold text-slate-800" data-i18n="memberIdLabel">Member ID *</label>
+                <input id="insurance_member_id" name="insurance_member_id" type="text" class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:border-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-200" aria-describedby="insurance_member_id_error" />
+                <p id="insurance_member_id_error" class="mt-1 hidden text-sm font-medium text-red-700" role="alert" aria-live="polite"></p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="space-y-4 rounded-xl border border-slate-200 p-4 sm:p-5">
+            <legend class="px-2 text-lg font-semibold text-slate-900" data-i18n="concernLegend">Health concern</legend>
+
+            <div>
+              <label for="health_concern" class="block text-sm font-semibold text-slate-800" data-i18n="healthConcernLabel">Brief description of your health concern *</label>
+              <textarea id="health_concern" name="health_concern" rows="5" minlength="20" maxlength="500" required class="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 focus:border-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-200" aria-describedby="health_concern_counter health_concern_error"></textarea>
+              <p id="health_concern_counter" class="mt-1 text-sm text-slate-600" aria-live="polite">0 / 500</p>
+              <p id="health_concern_error" class="mt-1 hidden text-sm font-medium text-red-700" role="alert" aria-live="polite"></p>
+            </div>
+
+            <div>
+              <label class="inline-flex items-start gap-2 text-sm text-slate-700">
+                <input id="contact_consent" name="contact_consent" type="checkbox" required class="mt-1 h-4 w-4" />
+                <span data-i18n="consentLabel">I consent to HealthCore contacting me *</span>
+              </label>
+              <p id="contact_consent_error" class="mt-1 hidden text-sm font-medium text-red-700" role="alert" aria-live="polite"></p>
+            </div>
+          </fieldset>
+
+          <div class="flex flex-wrap gap-3">
+            <button type="submit" class="rounded-md bg-sky-700 px-5 py-3 text-sm font-bold text-white transition hover:bg-sky-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700" data-i18n="submitBtn">
+              Submit enquiry
+            </button>
+            <button id="clearFormBtn" type="button" class="rounded-md border border-slate-400 px-5 py-3 text-sm font-bold text-slate-700 transition hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-700" data-i18n="clearBtn">
+              Clear form
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <div id="successMessage" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/60 p-4" role="dialog" aria-modal="true" aria-labelledby="successModalTitle" aria-describedby="successModalBody" tabindex="-1">
+      <div class="w-full max-w-xl rounded-xl border border-emerald-300 bg-white p-6 text-emerald-900 shadow-2xl">
+        <h2 id="successModalTitle" class="text-lg font-bold" data-i18n="successTitle">Thank you for reaching out to HealthCore.</h2>
+        <div id="successModalBody">
+          <p class="mt-2" data-i18n="successBody1">
+            We have received your enquiry. A member of our front desk team will contact you within 1 business day to confirm your appointment details and answer any questions.
+          </p>
+          <p class="mt-2" data-i18n="successBody2">
+            If you need urgent assistance, please call your preferred clinic directly using the numbers listed on our website.
+          </p>
+          <p class="mt-2" data-i18n="successBody3">We look forward to caring for you.</p>
+        </div>
+        <div class="mt-5 flex justify-end">
+          <button id="successOkBtn" type="button" class="rounded-md bg-sky-700 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-sky-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700" data-i18n="successOkBtn">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="mt-14 border-t border-slate-200 bg-white" role="contentinfo">
+      <div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 text-sm text-slate-600 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+        <p data-i18n="footerCopyright">© 2025 HealthCore. All rights reserved.</p>
+        <nav aria-label="Social media">
+          <ul class="flex items-center gap-4">
+            <li><a href="https://linkedin.com/company/healthcore" class="underline hover:text-sky-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://facebook.com/healthcore" class="underline hover:text-sky-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            <li><a href="https://instagram.com/healthcore" class="underline hover:text-sky-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "HealthCore Patient Enquiry Form",
+        "url": "https://www.healthcore.com/application.html",
+        "inLanguage": ["en", "es"],
+        "about": {
+          "@type": "MedicalOrganization",
+          "name": "HealthCore"
+        }
+      }
+    </script>
+
+    <script src="validation.js"></script>
+  </body>
+</html>
