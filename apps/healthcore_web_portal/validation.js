@@ -8,6 +8,7 @@ const insuranceFields = document.getElementById("insuranceFields");
 const concernField = document.getElementById("health_concern");
 const concernCounter = document.getElementById("health_concern_counter");
 const langButtons = document.querySelectorAll("[data-lang-btn]");
+let lastFocusedElement = null;
 
 const clinicClosingHour = {
   "HealthCore Austin Central": 20,
@@ -586,6 +587,7 @@ function validateAll() {
 }
 
 function openSuccessModal() {
+  lastFocusedElement = document.activeElement;
   successMessage.classList.remove("hidden");
   successMessage.classList.add("flex");
   document.body.classList.add("overflow-hidden");
@@ -596,7 +598,19 @@ function closeSuccessModal() {
   successMessage.classList.add("hidden");
   successMessage.classList.remove("flex");
   document.body.classList.remove("overflow-hidden");
-  form.elements.first_name.focus();
+  if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+    form.elements.first_name.focus();
+  } else {
+    form.elements.first_name.focus();
+  }
+}
+
+function getModalFocusableElements() {
+  return Array.from(
+    successMessage.querySelectorAll(
+      "button, [href], input, select, textarea, [tabindex]:not([tabindex='-1'])"
+    )
+  ).filter((el) => !el.hasAttribute("disabled") && el.getAttribute("aria-hidden") !== "true");
 }
 
 function clearFormState() {
@@ -707,8 +721,37 @@ successMessage.addEventListener("click", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && !successMessage.classList.contains("hidden")) {
+  const modalIsOpen = !successMessage.classList.contains("hidden");
+  if (!modalIsOpen) return;
+
+  if (event.key === "Escape") {
+    event.preventDefault();
     closeSuccessModal();
+    return;
+  }
+
+  if (event.key === "Tab") {
+    const focusable = getModalFocusableElements();
+    if (focusable.length === 0) {
+      event.preventDefault();
+      successMessage.focus();
+      return;
+    }
+
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    const active = document.activeElement;
+
+    if (event.shiftKey && active === first) {
+      event.preventDefault();
+      last.focus();
+      return;
+    }
+
+    if (!event.shiftKey && active === last) {
+      event.preventDefault();
+      first.focus();
+    }
   }
 });
 
