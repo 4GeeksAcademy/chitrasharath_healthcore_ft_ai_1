@@ -614,6 +614,23 @@ function clearFormState() {
   updateConcernCounter();
 }
 
+function applyDateLocale() {
+  const dateOfBirthInput = form.elements.date_of_birth;
+  const preferredDateInput = form.elements.preferred_date;
+  const locale = currentLang === "es" ? "es-ES" : "en-US";
+  const placeholder = currentLang === "es" ? "aaaa-mm-dd" : "yyyy-mm-dd";
+  const title =
+    currentLang === "es"
+      ? "Selecciona una fecha en el calendario"
+      : "Select a date from the calendar";
+
+  [dateOfBirthInput, preferredDateInput].forEach((input) => {
+    input.setAttribute("lang", locale);
+    input.setAttribute("placeholder", placeholder);
+    input.setAttribute("title", title);
+  });
+}
+
 function applyTranslations() {
   document.documentElement.lang = currentLang;
 
@@ -634,6 +651,7 @@ function applyTranslations() {
 
   updateConcernCounter();
   updateEveningWarning();
+  applyDateLocale();
 }
 
 function setLanguage(lang) {
