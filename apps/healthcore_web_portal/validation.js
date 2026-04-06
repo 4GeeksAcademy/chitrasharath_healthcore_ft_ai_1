@@ -8,7 +8,6 @@ const insuranceFields = document.getElementById("insuranceFields");
 const concernField = document.getElementById("health_concern");
 const concernCounter = document.getElementById("health_concern_counter");
 const langButtons = document.querySelectorAll("[data-lang-btn]");
-let lastFocusedElement = null;
 
 const clinicClosingHour = {
   "HealthCore Austin Central": 20,
@@ -63,7 +62,6 @@ const t = {
       "If you need urgent assistance, please call your preferred clinic directly using the numbers listed on our website.",
     successBody3: "We look forward to caring for you.",
     successOkBtn: "OK",
-    submittedSummary: "Submitted details",
     seoByline: "Prepared by HealthCore Digital. Reviewed by Priya Nair, Head of Patient Experience.",
     seoSources: "Source basis: HealthCore company briefing and milestone context (internal, 2026).",
     footerCopyright: "© 2025 HealthCore. All rights reserved.",
@@ -105,27 +103,7 @@ const t = {
     healthConcernBase: "Please describe your health concern in at least 20 characters",
     healthConcernRemaining: "characters remaining",
     warningEvening:
-      "Evening availability may be limited at this clinic based on closing time. Our team will confirm the closest available slot.",
-    summary: {
-      first_name: "First name",
-      last_name: "Last name",
-      date_of_birth: "Date of birth",
-      email: "Email",
-      phone: "Phone",
-      preferred_language: "Preferred language",
-      preferred_clinic: "Preferred clinic",
-      preferred_date: "Preferred date",
-      preferred_time: "Preferred time",
-      service_type: "Service needed",
-      new_patient: "First visit",
-      has_insurance: "Has insurance",
-      insurance_provider: "Insurance provider",
-      insurance_member_id: "Member ID",
-      patient_id: "Patient ID",
-      health_concern: "Health concern",
-      contact_consent: "Contact consent"
-    },
-    consentYes: "Granted"
+      "Evening availability may be limited at this clinic based on closing time. Our team will confirm the closest available slot."
   },
   es: {
     skip: "Saltar al contenido principal",
@@ -170,7 +148,6 @@ const t = {
       "Si necesitas asistencia urgente, llama directamente a tu clinica preferida usando los numeros listados en nuestro sitio web.",
     successBody3: "Esperamos poder atenderte pronto.",
     successOkBtn: "OK",
-    submittedSummary: "Detalles enviados",
     seoByline: "Preparado por HealthCore Digital. Revisado por Priya Nair, directora de experiencia del paciente.",
     seoSources: "Base de fuentes: resumen corporativo y contexto del hito de HealthCore (interno, 2026).",
     footerCopyright: "© 2025 HealthCore. Todos los derechos reservados.",
@@ -212,27 +189,7 @@ const t = {
     healthConcernBase: "Describe tu motivo de salud con al menos 20 caracteres",
     healthConcernRemaining: "caracteres restantes",
     warningEvening:
-      "La disponibilidad en horario nocturno puede ser limitada en esta clinica segun su hora de cierre. Nuestro equipo confirmara el horario mas cercano disponible.",
-    summary: {
-      first_name: "Nombre",
-      last_name: "Apellido",
-      date_of_birth: "Fecha de nacimiento",
-      email: "Correo",
-      phone: "Telefono",
-      preferred_language: "Idioma preferido",
-      preferred_clinic: "Clinica preferida",
-      preferred_date: "Fecha preferida",
-      preferred_time: "Horario preferido",
-      service_type: "Servicio solicitado",
-      new_patient: "Primera visita",
-      has_insurance: "Tiene seguro",
-      insurance_provider: "Proveedor de seguro",
-      insurance_member_id: "ID de miembro",
-      patient_id: "ID de paciente",
-      health_concern: "Motivo de salud",
-      contact_consent: "Consentimiento de contacto"
-    },
-    consentYes: "Otorgado"
+      "La disponibilidad en horario nocturno puede ser limitada en esta clinica segun su hora de cierre. Nuestro equipo confirmara el horario mas cercano disponible."
   }
 };
 
@@ -587,7 +544,6 @@ function validateAll() {
 }
 
 function openSuccessModal() {
-  lastFocusedElement = document.activeElement;
   successMessage.classList.remove("hidden");
   successMessage.classList.add("flex");
   document.body.classList.add("overflow-hidden");
@@ -598,11 +554,7 @@ function closeSuccessModal() {
   successMessage.classList.add("hidden");
   successMessage.classList.remove("flex");
   document.body.classList.remove("overflow-hidden");
-  if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
-    form.elements.first_name.focus();
-  } else {
-    form.elements.first_name.focus();
-  }
+  form.elements.first_name.focus();
 }
 
 function getModalFocusableElements() {
